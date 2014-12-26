@@ -11,14 +11,14 @@ var Vector2 = require('vector2');
 /* NEW UI CARD - LANDING */
 var main = new UI.Card({
   title: "Perfect Day",
-  icon: 'images/menu_icon.png',
+//   icon: 'images/menu_icon.png',
 //   subtitle: 'A Weather Permitting Alarm Clock',
   body: 'A Weather Permitting Alarm Clock.'
 });
 
 /* NEW UI CARD - SET ALARM */
 var alarm = new UI.Card({
-  title: "Set Alarm"
+  title: "Set Alarm",
 });
 
 /* NEW UI CARD - SET WEATHER CONDITIONS */
@@ -43,6 +43,9 @@ main.on('click', 'select', function(e) {
       }, {
         title: 'Set Weather Conditions',
         subtitle: 'Temperature, no rain, etc.'
+      }, {
+        title: 'Alarm Settings',
+        subtitle: 'on, off, recurring, etc.'
       }]
     }]
   });
@@ -53,13 +56,13 @@ main.on('click', 'select', function(e) {
   menu.show();
 });
 
-main.on('click', 'select', function(e) {
+main.on('click', 'up', function(e) {
   var wind = new UI.Window();
   var textfield = new UI.Text({
     position: new Vector2(0, 50),
     size: new Vector2(144, 30),
     font: 'gothic-24-bold',
-    text: 'Text Anywhere!',
+    text: 'Perfect Day',
     textAlign: 'center'
   });
   wind.add(textfield);
